@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: aws-durable-execution-sdk-python
-  version: 1.0.0.post1
+  version: 1.1.0
   python_min: 3.11
 
 package:
@@ -11,15 +11,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/aws_durable_execution_sdk_python-${{ version }}.tar.gz
-  sha256: 6d921ca58f64ab08ceb89b55772a9d488894798dafc399259548b9be2fba47a4
+  sha256: 8fc82503df9db7a7986611d24af50b6fd330c7d347782590e837e562da4d9e47
 
 build:
   number: 0
   noarch: python
-  script:
-    # https://github.com/aws/aws-durable-execution-sdk-python/pull/231
-    - sed -i 's|src/||g' pyproject.toml
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
@@ -29,8 +26,7 @@ requirements:
     - sed
   run:
     - python >=${{ python_min }}
-    - boto3 >=1.40.30
-
+    - boto3 >=1.42.1
 tests:
   - python:
       python_version: ${{ python_min }}.*
