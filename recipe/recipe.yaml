@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: aws-durable-execution-sdk-python
-  version: "1.1.1"
+  version: "1.1.2"
   python_min: 3.11
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/aws_durable_execution_sdk_python-${{ version }}.tar.gz
-  sha256: 3812b60a72ab5c5fd9c1c1ffeca96260a9a79910b2c1fe4cb47c758b7768b1ce
+  sha256: 6a46777ea95ea30480737078aea4cdf49f105459f955b2f3d65d7df31d2620a3
 
 build:
   number: 0
