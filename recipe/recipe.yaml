@@ -12,11 +12,16 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/aws_durable_execution_sdk_python-${{ version }}.tar.gz
   sha256: 6ce773cfba243df98ec35f375a30b98cc4779a9f921d8c6d1180773811bf57f0
+  target_directory: pkg/src
 
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    - cd pkg/src
+    - cp LICENSE ../..
+    - cp NOTICE ../..
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
