@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: aws-durable-execution-sdk-python
-  version: "2.0.1"
-  python_min: "3.11"
+  version: 2.1.0
+  python_min: '3.11'
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/aws_durable_execution_sdk_python-${{ version }}.tar.gz
-  sha256: 2ad9b8748d0f33d258b16a76ab6b7469057a0d1fdacfea153c232465c3f032bd
+  sha256: 74e56ab587defc7b98b674fe3b5f8c46500b74e3941719caca5b76c57800d844
   target_directory: pkg/src
 
 build:
@@ -31,7 +31,7 @@ requirements:
     - sed
   run:
     - python >=${{ python_min }}
-    - boto3 >=1.42.1
+    - boto3 >=1.43.114
 tests:
   - python:
       python_version: ${{ python_min }}.*
